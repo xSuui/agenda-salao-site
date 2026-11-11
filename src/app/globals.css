@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  background: #f6eeea;
+  color: #1c1917;
+}
+
+/* Pegadinha do guia: "hidden" quebra o position: sticky; "clip" não */
+.pagina {
+  overflow-x: clip;
+}
+
+.revelar {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: none;
+}
+
+/* No celular o texto fica por cima da cena: cartão claro para ler bem */
+@media (max-width: 767px) {
+  .caixa-texto {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(120, 60, 60, 0.12);
+  }
+}
